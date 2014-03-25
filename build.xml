@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+
+
+<project name="jcatalog" default="update-db" basedir=".">
+  <!-- Configure the context path for this application -->
+  
+  <property name="lib.dir"		value="${basedir}/lib" />
+    <property name="version" 		value="01_v1.0/03" />
+
+  <property name="database.driver" 		value="com.mysql.jdbc.Driver" />
+  <property name="database.url" 		value="jdbc:mysql://192.168.103.30/" />
+  <property name="database.username" 		value="root" />
+  <property name="database.password" 		value="root@123" />
+  <property name="schema" 		value="catalog" />
+  
+  <path id="classpath">
+      <fileset dir="${lib.dir}">
+        <include name="**/*.jar"/>
+      </fileset>
+  </path>
+
+  <taskdef resource="dbmaintain-anttasks.xml" classpathref="classpath"/>
+    <target name="update-db">
+  <move todir="RolledbackScripts" >
+      <fileset dir ="scripts/">
+      <include name="${version}*.sql"/>
+</fileset>
+</move>
+      <updateDatabase scriptLocations="scripts" autoCreateDbMaintainScriptsTable="true" fromScratchEnabled="true">
+        <database driverClassName="${database.driver}" userName="${database.username}" password="${database.password}" url="${database.url}"  schemaNames="${schema}"/>
+    </updateDatabase>
+</target>
+  
+</project>
+
