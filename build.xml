@@ -8,11 +8,11 @@
   <property name="lib.dir"		value="${basedir}/lib" />
     <property name="version" 		value="01_v1.0/03" />
 
-  <property name="database.driver" 		value="com.mysql.jdbc.Driver" />
-  <property name="database.url" 		value="jdbc:mysql://192.168.103.30/" />
-  <property name="database.username" 		value="root" />
-  <property name="database.password" 		value="root@123" />
-  <property name="schema" 		value="catalog" />
+  <property name="database.driver" 		value="${driver}" />
+  <property name="database.url" 		value="${url}" />
+  <property name="database.username" 		value="${usn}" />
+  <property name="database.password" 		value="${pwd}" />
+  <property name="schema" 		value="{schema}" />
   
   <path id="classpath">
       <fileset dir="${lib.dir}">
