@@ -12,7 +12,7 @@
   <property name="database.url" 		value="${url}" />
   <property name="database.username" 		value="${usn}" />
   <property name="database.password" 		value="${pwd}" />
-
+  <property name="schema" 		value="{schema}" />
   
   <path id="classpath">
       <fileset dir="${lib.dir}">
@@ -28,7 +28,7 @@
 </fileset>
 </move>
       <updateDatabase scriptLocations="scripts" autoCreateDbMaintainScriptsTable="true" fromScratchEnabled="true">
-        <database driverClassName="${database.driver}" userName="${database.username}" password="${database.password}" url="${database.url}"/>
+        <database driverClassName="${database.driver}" userName="${database.username}" password="${database.password}" url="${database.url}" schemaNames="${schema}"/>
     </updateDatabase>
 </target>
   
