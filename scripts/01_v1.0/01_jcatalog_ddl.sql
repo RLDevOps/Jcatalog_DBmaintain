@@ -1,5 +1,4 @@
-
-CREATE DATABASE IF NOT EXISTS catalog;
+CREATE DATABASE catalog;
 
 USE catalog;
 
