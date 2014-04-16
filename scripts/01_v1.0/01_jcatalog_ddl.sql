@@ -1,3 +1,5 @@
+show databases;
+
 CREATE DATABASE catalog;
 
 USE catalog;
