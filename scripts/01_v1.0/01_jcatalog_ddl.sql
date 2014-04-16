@@ -1,6 +1,4 @@
-show databases;
-
-CREATE DATABASE catalog;
+CREATE DATABASE IF NOT EXISTS catalog;
 
 USE catalog;
 
